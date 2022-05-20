@@ -1,0 +1,48 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{head :: head('Bonus | Read')}"></header>
+
+<body>
+  <nav th:replace="~{navigation :: nav}"></nav>
+
+  <div class="container mt-3">
+    <form th:object="${bonusDto}" action="#" method="POST">
+    
+      <div class="row justify-content-center"> 
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="input-group mb-3 input-group-sm">
+              <span class="input-group-text">Nome:</span>
+              <input type="text" th:placeholder="${bonus.nomeBonus}" readonly class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="input-group mb-3 input-group-sm">
+              <span class="input-group-text">Descrição:</span>
+              <input type="text" th:placeholder="${bonus.nomeBonus}" readonly class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <select disabled class="form-select form-select-sm mb-3">
+              <option th:value="${bonus.idPesquisa}" th:text="${bonus.idPesquisa}"></option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</body>
+
+</html>

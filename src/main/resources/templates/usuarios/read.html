@@ -1,0 +1,52 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{head :: head('Usuarios | Read')}"></header>
+
+<body>
+  <nav th:replace="~{navigation :: nav}"></nav>
+  
+  <div class="container mt-3 d-flex justify-content-center">
+    <form action="#" method="POST">
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Email:</span>
+            <input type="text" th:placeholder="${usuario.email}" readonly class="form-control">
+          </div>
+        </div>
+
+        <div class="row">
+        </div>
+        <div class="col-sm">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Senha:</span>
+            <input type="text" th:placeholder="${usuario.senha}" readonly class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Nome Completo:</span>
+            <input type="text" th:placeholder="${usuario.nomeCompleto}" readonly class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">CPF:</span>
+            <input type="text" th:placeholder="${usuario.cpf}" readonly class="form-control">
+          </div>
+        </div>
+      </div>
+      
+    </form>
+  </div>
+</body>
+
+</html>

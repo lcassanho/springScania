@@ -1,0 +1,67 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{head :: head('Respostas | Update')}"></header>
+
+<body>
+  <nav th:replace="~{navigation :: nav}"></nav>
+
+  <div class="container mt-3">
+    <form th:object="${usuarioDto}" action="#" th:action="@{/usuarios/{id}/read (id=${usuarioId})}" method="POST">
+    
+      <div class="row justify-content-center"> 
+        
+        <div class="col-sm-6">
+          <div class="form-group">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Email:</span>
+            <input type="text" th:errorclass="is-invalid" th:field="*{email}" class="form-control">
+            <div class="invalid-feedback" th:errors="*{email}"></div>
+          </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-sm-6">
+          <div class="form-group">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Senha:</span>
+            <input type="text" th:errorclass="is-invalid" th:field="*{senha}" class="form-control">
+            <div class="invalid-feedback" th:errors="*{senha}"></div>
+          </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-sm-6">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Nome Completo:</span>
+            <input type="text" th:errorclass="is-invalid" th:field="*{nomeCompleto}" class="form-control">
+            <div class="invalid-feedback" th:errors="*{nomeCompleto}"></div>
+          </div>
+      </div>
+      
+              <div class="w-100"></div>
+
+        <div class="col-sm-6">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">CPF:</span>
+            <input type="text" th:errorclass="is-invalid" th:field="*{cpf}" class="form-control">
+            <div class="invalid-feedback" th:errors="*{cpf}"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-end">
+        <div class="col-sm-3">
+          <button type="submit" class="btn btn-success">Criar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</body>
+
+</html>

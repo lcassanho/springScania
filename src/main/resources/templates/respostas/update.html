@@ -1,0 +1,62 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{head :: head('Respostas | Update')}"></header>
+
+<body>
+  <nav th:replace="~{navigation :: nav}"></nav>
+
+  <div class="container mt-3">
+    <form th:object="${respostaDto}" action="#" th:action="@{/respostas/{id}/read (id=${respostaId})}" method="POST">
+    
+    
+      <div class="row justify-content-center"> 
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="input-group mb-3 input-group-sm">
+              <span class="input-group-text">Descrição:</span>
+              <input type="text" th:errorclass="is-invalid" th:field="*{descResposta}" class="form-control">
+              <div class="invalid-feedback" th:errors="*{descResposta}"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="input-group mb-3 input-group-sm">
+              <span class="input-group-text">Tipo:</span>
+              <input type="text" th:errorclass="is-invalid" th:field="*{tipoResposta}" class="form-control">
+              <div class="invalid-feedback" th:errors="*{tipoResposta}"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <select th:errorclass="is-invalid" th:field="*{idPergunta}" class="form-select form-select-sm mb-3">
+              <option th:value="'1'" th:text="1"></option>
+              <option th:value="'2'" th:text="2"></option>
+              <option th:value="'3'" th:text="3"></option>
+              <option th:value="'4'" th:text="4"></option>
+              <option th:value="'5'" th:text="5"></option>
+            </select>
+            <div class="invalid-feedback" th:errors="*{idPergunta}"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-end">
+        <div class="col-sm-3">
+          <button type="submit" class="btn btn-success">Criar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</body>
+
+</html>

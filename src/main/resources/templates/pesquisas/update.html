@@ -1,0 +1,48 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{head :: head('Pesquisas | Update')}"></header>
+
+<body>
+  <nav th:replace="~{navigation :: nav}"></nav>
+
+  <div class="container mt-3">
+    <form th:object="${pesquisaDto}" action="#" th:action="@{/pesquisas/{id}/read (id=${pesquisaId})}" method="POST">
+    
+    
+      <div class="row justify-content-center"> 
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="input-group mb-3 input-group-sm">
+              <span class="input-group-text">Nome:</span>
+              <input type="text" th:errorclass="is-invalid" th:field="*{nomePesquisa}" class="form-control">
+              <div class="invalid-feedback" th:errors="*{nomePesquisa}"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="input-group mb-3 input-group-sm">
+              <span class="input-group-text">Tema:</span>
+              <input type="text" th:errorclass="is-invalid" th:field="*{temaPesquisa}" class="form-control">
+              <div class="invalid-feedback" th:errors="*{temaPesquisa}"></div>
+            </div>
+          </div>
+        </div>
+             
+      </div>
+
+      <div class="row justify-content-end">
+        <div class="col-sm-3">
+          <button type="submit" class="btn btn-success">Criar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</body>
+
+</html>
